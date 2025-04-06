@@ -1,18 +1,17 @@
-# Use a standard base image
-FROM node:18-alpine
+# Use Maven for building
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 
-# Set working directory
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+
+RUN mvn clean package -DskipTests
+
+# Use a minimal JRE for running
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-# Copy package files and install dependencies
-COPY package*.json ./
-RUN npm install
+COPY --from=build /app/target/*.jar app.jar
 
-# Copy application code
-COPY . .
-
-# Expose port
-EXPOSE 3000
-
-# Command to run the application
-CMD ["node", "index.js"]
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
