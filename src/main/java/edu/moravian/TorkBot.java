@@ -49,7 +49,7 @@ public class TorkBot {
                 if (event.getAuthor().isBot()) return;
 
                 TextChannel channel = event.getChannel().asTextChannel();
-                if (!channel.getName().equals("torktest")) return;
+                if (!channel.getName().equals("anthony-channel")) return;
 
                 String userId = event.getAuthor().getId();
                 String message = event.getMessage().getContentRaw();

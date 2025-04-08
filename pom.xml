@@ -91,7 +91,7 @@
         <archive>
           <manifest>
             <addClasspath>true</addClasspath>
-            <mainClass>src.main.edu.moravian.Main</mainClass> <!-- Replace with your actual main class -->
+            <mainClass>src.main.edu.moravian.TorkBot</mainClass> <!-- Replace with your actual main class -->
           </manifest>
         </archive>
       </configuration>
