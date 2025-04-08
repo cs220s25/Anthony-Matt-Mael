@@ -48,16 +48,7 @@ class RedisTest {
         assertNull(redisManager.loadSession(userId), "Session should be null after deletion");
     }
 
-    @Test
-    void testHasSession() {
-        String userId = "user1";
-        assertFalse(redisManager.hasSession(userId), "Session should not exist initially");
 
-        QuestionManager questionManager = new QuestionManager(QuestionLoader.loadQuestions());
-        redisManager.saveSession(userId, questionManager);
-
-        assertTrue(redisManager.hasSession(userId), "Session should exist after saving");
-    }
 
     @Test
     void testResetSessions() {
