@@ -83,6 +83,19 @@
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
+        <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.2.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <mainClass>src.main.edu.moravian.Main</mainClass> <!-- Replace with your actual main class -->
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
         <!-- Resource Plugin -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
@@ -96,6 +109,7 @@
             <release>${java.version}</release>
           </configuration>
         </plugin>
+      
         <!-- Surefire Plugin: Runs JUnit Tests -->
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>

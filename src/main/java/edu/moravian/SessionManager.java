@@ -14,6 +14,7 @@ public class SessionManager {
             throw new SessionAlreadyInProgressException();
         }
     }
+    
 
     public void endSession(String playerName) throws NoSessionDelete {
         if (activeSessionPlayer != null && activeSessionPlayer.equals(playerName)) {
