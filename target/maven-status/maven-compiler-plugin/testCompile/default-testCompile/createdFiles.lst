@@ -1,5 +1,6 @@
-edu/moravian/StorageTest.class
 edu/moravian/MultipleChoiceQuestionTest.class
 edu/moravian/BotResponderTest.class
 edu/moravian/QuestionLoaderTest.class
+edu/moravian/MemoryStorageTest.class
+edu/moravian/RedisTest.class
 edu/moravian/QuestionManagerTest.class

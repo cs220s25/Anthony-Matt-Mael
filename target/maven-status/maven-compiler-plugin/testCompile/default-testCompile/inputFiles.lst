@@ -1,6 +1,6 @@
-/Users/dayouba/IdeaProjects/discordBotProject/src/test/java/edu/moravian/RedisTest.java
-/Users/dayouba/IdeaProjects/discordBotProject/src/test/java/edu/moravian/BotResponderTest.java
-/Users/dayouba/IdeaProjects/discordBotProject/src/test/java/edu/moravian/StorageTest.java
-/Users/dayouba/IdeaProjects/discordBotProject/src/test/java/edu/moravian/QuestionLoaderTest.java
-/Users/dayouba/IdeaProjects/discordBotProject/src/test/java/edu/moravian/QuestionManagerTest.java
-/Users/dayouba/IdeaProjects/discordBotProject/src/test/java/edu/moravian/MultipleChoiceQuestionTest.java
+/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/QuestionLoaderTest.java
+/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/BotResponderTest.java
+/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/RedisTest.java
+/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/MemoryStorageTest.java
+/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/QuestionManagerTest.java
+/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/MultipleChoiceQuestionTest.java
