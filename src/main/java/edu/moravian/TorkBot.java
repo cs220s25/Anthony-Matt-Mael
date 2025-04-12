@@ -17,7 +17,9 @@ public class TorkBot {
 
     public static void main(String[] args) {
         try {
-            Dotenv dotenv = Dotenv.load();
+            Dotenv dotenv = Dotenv.configure()
+  		 .directory("/app")
+   		 .load();
             String discordToken = dotenv.get("DISCORD_KEY");
 
             if (discordToken == null || discordToken.isBlank()) {
