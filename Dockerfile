@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the shaded jar to the container
-COPY target/dbot-1.0-SNAPSHOT-shaded.jar bot.jar
+COPY target/dbot-1.0-SNAPSHOT.jar bot.jar
 
 # Run the bot
 CMD ["java", "-jar", "bot.jar"]

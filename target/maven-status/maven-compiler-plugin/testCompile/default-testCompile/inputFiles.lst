@@ -1,6 +1,6 @@
-/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/QuestionLoaderTest.java
-/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/BotResponderTest.java
-/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/RedisTest.java
-/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/MemoryStorageTest.java
-/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/QuestionManagerTest.java
-/Users/dayouba/CSCI220/DevOpsGroupProject/Anthony-Matt-Mael/src/test/java/edu/moravian/MultipleChoiceQuestionTest.java
+/home/ec2-user/Anthony-Matt-Mael/src/test/java/edu/moravian/QuestionLoaderTest.java
+/home/ec2-user/Anthony-Matt-Mael/src/test/java/edu/moravian/MultipleChoiceQuestionTest.java
+/home/ec2-user/Anthony-Matt-Mael/src/test/java/edu/moravian/MemoryStorageTest.java
+/home/ec2-user/Anthony-Matt-Mael/src/test/java/edu/moravian/BotResponderTest.java
+/home/ec2-user/Anthony-Matt-Mael/src/test/java/edu/moravian/RedisTest.java
+/home/ec2-user/Anthony-Matt-Mael/src/test/java/edu/moravian/QuestionManagerTest.java
