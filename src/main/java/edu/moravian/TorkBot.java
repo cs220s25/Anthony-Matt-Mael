@@ -8,6 +8,8 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
+import org.json.JSONObject;
+
 
 import javax.security.auth.login.LoginException;
 
@@ -17,10 +19,13 @@ public class TorkBot {
 
     public static void main(String[] args) {
         try {
-            String discordToken = AWSSecretsManagerUtil.getSecret("220_Discord_Token");
-            discordToken = discordToken.trim();
+            String secretJson = AWSSecretsManagerUtil.getSecret("220_Discord_Token").trim();
+
+            JSONObject json = new JSONObject(secretJson);
+            String discordToken = json.getString("DISCORD_TOKEN").trim();
 
             JDABuilder.createDefault(discordToken)
+                    .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                     .build();
 
             if (discordToken == null || discordToken.isBlank()) {
