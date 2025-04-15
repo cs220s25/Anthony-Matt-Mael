@@ -18,6 +18,10 @@ public class TorkBot {
     public static void main(String[] args) {
         try {
             String discordToken = AWSSecretsManagerUtil.getSecret("220_Discord_Token");
+            discordToken = discordToken.trim();
+
+            JDABuilder.createDefault(discordToken)
+                    .build();
 
             if (discordToken == null || discordToken.isBlank()) {
                 throw new IllegalArgumentException("Discord token not found. Ensure DISCORD_KEY is set in the .env file.");
