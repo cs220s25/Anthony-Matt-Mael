@@ -1,4 +1,4 @@
-name: "CodeQL - Java"
+name: "CodeQL Advanced"
 
 on:
   push:
@@ -6,20 +6,25 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '30 22 * * *'   # 1:00 AM EST
+    - cron: '0 6 * * *'   # 1:00 AM EST
     - cron: '0 16 * * *'  # 11:00 AM EST
 
 jobs:
   analyze:
-    name: Analyze Java
-    runs-on: ubuntu-latest
+    name: Analyze (${{ matrix.language }})
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions:
       security-events: write
+      packages: read
+      actions: read
+      contents: read
 
     strategy:
       fail-fast: false
       matrix:
-        language: [java-kotlin]
+        include:
+          - language: java-kotlin
+            build-mode: manual
 
     steps:
       - name: Checkout repository
@@ -29,16 +34,19 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17' 
+          java-version: '17' # Adjust based on your actual version
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          build-mode: manual
+          build-mode: ${{ matrix.build-mode }}
 
       - name: Build with Maven
+        if: matrix.build-mode == 'manual'
         run: mvn clean install -DskipTests
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
