@@ -27,9 +27,8 @@ public class RedisManager extends MemoryStorage {
             jedis.sadd("session:" + userId + ":roles", role.name());
         }
         jedis.del("session:" + userId + ":questions");
-        for (MultipleChoiceQuestion question : session.getQuestions()) {
+        for (MultipleChoiceQuestion question : session.getQuestions()) 
             jedis.rpush("session:" + userId + ":questions", question.toString());
-        }
     } catch (JedisException e) {
         throw new RuntimeException("Failed to save session for user: " + userId, e);
     }
