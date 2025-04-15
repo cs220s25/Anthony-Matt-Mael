@@ -72,6 +72,9 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v2
 
+    - name: Generate .env file from GitHub Secret
+      run: echo "${{ secrets.ENV_FILE }}" > .env
+
     - name: Build, tag, and push Docker image to ECR
       id: build-image
       env:
@@ -80,4 +83,20 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "
+        echo "IMAGE=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
+
+    - name: Fill in the new image ID in the ECS task definition
+      id: render-task
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ env.ECS_TASK_DEFINITION }}
+        container-name: ${{ env.CONTAINER_NAME }}
+        image: ${{ env.IMAGE }}
+
+    - name: Deploy updated task definition to ECS
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.render-task.outputs.task-definition }}
+        service: ${{ env.ECS_SERVICE }}
+        cluster: ${{ env.ECS_CLUSTER }}
+        wait-for-service-stability: true
