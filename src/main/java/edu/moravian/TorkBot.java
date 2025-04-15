@@ -20,7 +20,7 @@ public class TorkBot {
             Dotenv dotenv = Dotenv.configure()
   		 .directory(".")
    		 .load();
-            String discordToken = dotenv.get("DISCORD_KEY");
+            String discordToken = AWSSecretsManagerUtil.getSecret("220_Discord_Token");
 
             if (discordToken == null || discordToken.isBlank()) {
                 throw new IllegalArgumentException("Discord token not found. Ensure DISCORD_KEY is set in the .env file.");
