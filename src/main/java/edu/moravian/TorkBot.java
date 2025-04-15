@@ -17,9 +17,6 @@ public class TorkBot {
 
     public static void main(String[] args) {
         try {
-            Dotenv dotenv = Dotenv.configure()
-  		 .directory(".")
-   		 .load();
             String discordToken = AWSSecretsManagerUtil.getSecret("220_Discord_Token");
 
             if (discordToken == null || discordToken.isBlank()) {
