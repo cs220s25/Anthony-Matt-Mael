@@ -1,13 +1,17 @@
-# Use an official OpenJDK runtime as base
-FROM openjdk:17-jdk-slim
+# Use Maven for building
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 
-# Set working directory inside container
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+
+RUN mvn clean package -DskipTests
+
+# Use a minimal JRE for running
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-COPY .env .env
+COPY --from=build /app/target/*.jar app.jar
 
-# Copy the shaded jar to the container
-COPY target/dbot-1.0-SNAPSHOT.jar bot.jar
-
-# Run the bot
-CMD ["java", "-jar", "bot.jar"]
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
