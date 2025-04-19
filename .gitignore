@@ -7,20 +7,22 @@
 # BlueJ files
 *.ctxt
 
-
+# Environment variables
 .env
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# VS Code settings
+.vscode/
 
-.vscode
-
+# IntelliJ IDEA settings
 .idea/
 
+# Build output
 target/
 
-# Package Files #
+# Package files
 *.jar
 *.war
 *.nar
@@ -29,7 +31,6 @@ target/
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# JVM crash logs
 hs_err_pid*
 replay_pid*
-.env
