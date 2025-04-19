@@ -19,6 +19,8 @@
 # IntelliJ IDEA settings
 .idea/
 
+.DS_Store
+
 # Build output
 target/
 
