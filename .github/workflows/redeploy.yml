@@ -12,7 +12,7 @@ jobs:
       - name: SSH Redeploy Script 
         uses: cross-the-world/ssh-pipeline@v1.2.0
         with:
-          host: ${{ secrets.PUBLICIP }}
+          host: ${{ secrets.PUBLIC_IP }}
           user: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
