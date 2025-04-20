@@ -18,10 +18,3 @@ jobs:
           script: |
             cd /Anthony-Matt-Mael
             ./redeploy.sh
-
-      
-    
-  
-  
-
-  
