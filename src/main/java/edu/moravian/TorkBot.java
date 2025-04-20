@@ -18,25 +18,29 @@ public class TorkBot {
     private static final SessionManager sessionManager = new SessionManager();
 
     public static void main(String[] args) {
+        String discordToken;
         try {
-            String secretJson = AWSSecretsManagerUtil.getSecret("220_Discord_Token").trim();
+            try {
+                String secretJson = AWSSecretsManagerUtil.getSecret("220_Discord_Token").trim();
 
-            JSONObject json = new JSONObject(secretJson);
-            String discordToken = json.getString("DISCORD_TOKEN").trim();
+                JSONObject json = new JSONObject(secretJson);
+                discordToken = json.getString("DISCORD_TOKEN").trim();
 
-            JDABuilder.createDefault(discordToken)
-                    .enableIntents(GatewayIntent.MESSAGE_CONTENT)
-                    .build();
-
-            if (discordToken == null || discordToken.isBlank()) {
-                throw new IllegalArgumentException("Discord token not found. Ensure DISCORD_KEY is set in the .env file.");
+                JDABuilder.createDefault(discordToken)
+                        .enableIntents(GatewayIntent.MESSAGE_CONTENT);
+            } catch (Exception e) {
+                System.err.println("Error while fetching Discord token in AWS: " + e.getMessage() + ". Falling back to .env file.");
+                Dotenv dotenv = Dotenv.load();
+                discordToken = dotenv.get("DISCORD_TOKEN");
             }
+            if (discordToken == null || discordToken.isBlank())
+                throw new IllegalArgumentException("Discord token not found. Ensure DISCORD_KEY is set in the .env file.");
 
             BotResponder responder = new BotResponder(new RedisManager());
-
             startBot(responder, discordToken);
 
             System.out.println("TorkBot is running...");
+
         } catch (LoginException e) {
             System.err.println("Failed to log in to Discord. Please check your bot token.");
             e.printStackTrace();
