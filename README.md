@@ -29,10 +29,17 @@ team roles: Manager, Strategist, Debugger, or Speaker.
   Once completed, users can retrieve their assigned role anytime with !myrole or delete their questionnaire data using !delete. 
 The !help command provides an overview of all available commands for easy navigation.`
 
+## Technologies Used
+- [AWS EC2](https://aws.amazon.com/ec2/)
+- [Redis](https://redis.io/)
+- [Maven](https://maven.apache.org/)
+- [Docker](https://www.docker.com/)
+- [GitHub](http://www.github.com/)
+
 ## Setup
 ### Local
 1. Clone the repository into a local directory
-2. Change your directory to the cloned repository (if in terminal window):\
+2. Change your directory to the cloned repository:\
 ````cd <local repo name> ````
 3. Create a .env file and add your Discord token to the file:\
 ````DISCORD_TOKEN="<your_token_here>"````
