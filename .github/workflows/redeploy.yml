@@ -1,0 +1,27 @@
+name: Redeploy Discord Bot
+
+on: 
+  push:
+    branches:
+      - main # Triggers the workflow when pushes are made to the main branch
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH Redeploy Script 
+        uses: cross-the-world/ssh-pipeline@v1.2.0
+        with:
+          host: ${{ secrets.PUBLICIP }}
+          user: ec2-user
+          key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          script: |
+            cd /Anthony-Matt-Mael
+            ./redeploy.sh
+
+      
+    
+  
+  
+
+  
