@@ -3,7 +3,7 @@ name: Redeploy Discord Bot
 on: 
   push:
     branches:
-      - main # Triggers the workflow when pushes are made to the main branch
+      - main # Triggers the workflow automatically when pushes are made to the main branch
       
 jobs:
   deploy:
@@ -14,7 +14,7 @@ jobs:
         with:
           host: ${{ secrets.PUBLICIP }}
           user: ec2-user
-          key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /Anthony-Matt-Mael
             ./redeploy.sh
