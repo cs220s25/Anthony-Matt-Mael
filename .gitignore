@@ -19,6 +19,7 @@
 # IntelliJ IDEA settings
 .idea/
 
+# macOS settings
 .DS_Store
 
 # Build output

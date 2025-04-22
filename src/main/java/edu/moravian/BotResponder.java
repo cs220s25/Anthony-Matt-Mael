@@ -21,7 +21,7 @@ public class BotResponder {
 
     public String respond(MessageReceivedEvent event, String userId, String message) {
         try {
-            if (message.equals("!startt")) {
+            if (message.equals("!start")) {
                 return handleStartCommand(userId);
             } else if (message.equals("!help")) {
                 return BotResponses.helpMessage();
