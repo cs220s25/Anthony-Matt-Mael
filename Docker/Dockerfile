@@ -1,5 +1,5 @@
-# Use an official OpenJDK runtime as base
-FROM openjdk:17-jdk-slim
+# Use maven to build the project
+FROM maven:3.9.6-eclipse-temurin-21 as builder
 
 WORKDIR /app
 COPY pom.xml .
