@@ -1,5 +1,5 @@
 # Use maven to build the project
-FROM maven:3.9.6-eclipse-temurin-21 as builder
+FROM maven:3.9.6-eclipse-temurin-21 AS builder
 
 WORKDIR /app
 COPY pom.xml .
@@ -9,7 +9,7 @@ COPY .env .env
 RUN mvn clean package -DskipTests
 
 # Copy the shaded jar to the container
-COPY target/dbot-1.0-SNAPSHOT.jar bot.jar
+COPY --from=builder /app/target/dbot-1.0-SNAPSHOT.jar bot.jar
 # Use a minimal JRE for running
 
 # Run the bot
