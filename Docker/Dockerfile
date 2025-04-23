@@ -16,7 +16,6 @@ WORKDIR /app
 
 # Copy only the final jar file and .env from the builder stage
 COPY --from=builder /app/target/dbot-1.0-SNAPSHOT.jar bot.jar
-COPY .env .env
 
 # Run the bot
 CMD ["java", "-jar", "bot.jar"]
