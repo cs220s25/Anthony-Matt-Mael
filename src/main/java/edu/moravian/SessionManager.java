@@ -23,6 +23,7 @@ public class SessionManager {
         } else {
             throw new NoSessionDelete();
         }
+
     }
 
     public boolean isSessionActive() {

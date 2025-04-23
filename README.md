@@ -14,9 +14,9 @@ team roles: Manager, Strategist, Debugger, or Speaker.
 
 ![description](TeamWorkBotUML.png)
 
-`	BotResponder handles interactions with users on Discord.
+`BotResponder handles interactions with users on Discord.
 	QuestionManager manages the personality questionnaire, including presenting questions and collecting responses.
-	RoleEnu represents the defined team roles (Manager, Strategist, Debugger, Speaker).
+	RoleEnum represents the defined team roles (Manager, Strategist, Debugger, Speaker).
 	SessionManager tracks users’ questionnaire sessions to ensure smooth and organized data flow.
 	Storage utilizes RedisManager for efficient data storage and retrieval.`
 
