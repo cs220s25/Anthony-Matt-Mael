@@ -14,7 +14,7 @@ FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
-# Copy only the final jar file and .env from the builder stage
+# Copy only the final jar file from the builder stage
 COPY --from=builder /app/target/dbot-1.0-SNAPSHOT.jar bot.jar
 
 # Run the bot

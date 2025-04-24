@@ -52,16 +52,19 @@ The !help command provides an overview of all available commands for easy naviga
 2. Running ````redis-cli shutdown```` in a separate terminal window
 
 ### AWS
-1. Run ````sudo yum install git -y```` to install git
-2. Run ````sudo yum install redis6 -y```` to install redis
-3. Run ````sudo yum install maven-amazon-corretto21```` to install maven
-4. Clone the repository into a local directory
-5. Change your directory to the cloned repository:\
+1. Launch your EC2 instance via the AWS console
+2. SSH into your EC2 instance using the command:\
+````ssh -i <your-key.pem> ec2-user@<your-ec2-ip>````
+3. Run ````sudo yum install git -y```` to install git
+4. Run ````sudo yum install redis6 -y```` to install redis
+5. Run ````sudo yum install maven-amazon-corretto21```` to install maven
+6. Clone the repository into a local directory
+7. Change your directory to the cloned repository:\
 ````cd <local repo name> ````
-6. Run ````sudo systemctl enable redis6```` to enable redis
-7. Run ````sudo systemctl start redis6```` to start redis
-8. Run ````mvn clean package```` to build the project
-9. Run ````java -jar target/dbot-1.0-SNAPSHOT.jar```` to start the bot
+8. Run ````sudo systemctl enable redis6```` to enable redis
+9. Run ````sudo systemctl start redis6```` to start redis
+10. Run ````mvn clean package```` to build the project
+11. Run ````java -jar target/dbot-1.0-SNAPSHOT.jar```` to start the bot
 
 ### Docker
 1. Run ````mvn clean package```` to rebuild the bot
