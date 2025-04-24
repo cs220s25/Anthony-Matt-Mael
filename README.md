@@ -62,3 +62,16 @@ The !help command provides an overview of all available commands for easy naviga
 7. Run ````sudo systemctl start redis6```` to start redis
 8. Run ````mvn clean package```` to build the project
 9. Run ````java -jar target/dbot-1.0-SNAPSHOT.jar```` to start the bot
+
+### Docker
+1. Run ````mvn clean package```` to rebuild the bot
+2. Run ````sudo docker build -t dbot .```` to build the docker image
+3. Run ````sudo docker stop my-discord-bot || true```` to stop any previous containers
+4. Run ````sudo docker rm my-discord-bot || true```` to remove any previous containers
+5. Run ````sudo docker run -d --name my-discord-bot discord-bot```` to start the bot inside the docker container
+6. Run ````sudo docker logs my-discord-bot```` to view the logs of the bot
+
+## Background
+The CI/CD processes were developed with the assistance of [ChatGPT](https://chatgpt.com/) & 
+[ClaudeAI](https://claude.ai/) to ensure a smooth and efficient deployment process.
+
