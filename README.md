@@ -35,6 +35,7 @@ The !help command provides an overview of all available commands for easy naviga
 - [Maven](https://maven.apache.org/)
 - [Docker](https://www.docker.com/)
 - [GitHub](http://www.github.com/)
+- [Checkstyle](https://github.com/checkstyle/checkstyle)
 
 ## Setup
 ### Local
@@ -76,5 +77,5 @@ The !help command provides an overview of all available commands for easy naviga
 
 ## Background
 The CI/CD processes were developed with the assistance of [ChatGPT](https://chatgpt.com/) & 
-[ClaudeAI](https://claude.ai/) to ensure a smooth and efficient deployment process.
+[ClaudeAI](https://claude.ai/) to ensure a smooth and efficient deployment process. 
 
