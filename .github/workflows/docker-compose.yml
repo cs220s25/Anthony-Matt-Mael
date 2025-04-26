@@ -1,20 +1,19 @@
-version: '3.8'
+name: Docker Compose Deployment
 
-services:
-  bot:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    depends_on:
-      - redis
-    environment:
-      - REDIS_HOST=redis
-    restart: always
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-  redis:
-    image: redis:latest
-    ports:
-      - "6379:6379"
-    restart: alwaysasa
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Start Docker Compose services
+        run: docker-compose up -d
+        
+      - name: Check running containers
+        run: docker ps
