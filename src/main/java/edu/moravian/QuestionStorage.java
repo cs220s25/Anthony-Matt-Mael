@@ -28,6 +28,8 @@ public interface QuestionStorage {
      */
     boolean removeQuestion(MultipleChoiceQuestion question) throws StorageException;
 
+    boolean changeQuestion(MultipleChoiceQuestion question) throws StorageException;
+
     /**
      * Clears all questions from the storage.
      */

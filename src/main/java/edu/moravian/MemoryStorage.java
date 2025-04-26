@@ -35,6 +35,16 @@ public class MemoryStorage implements QuestionStorage {
     }
 
     @Override
+    public boolean changeQuestion(MultipleChoiceQuestion question) throws StorageException {
+        int index = questions.indexOf(question);
+        if (index != -1) {
+            questions.set(index, question);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void clearAllQuestions() throws StorageException {
         questions.clear();
         totalQuestions = 0;
