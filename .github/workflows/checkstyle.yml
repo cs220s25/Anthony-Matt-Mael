@@ -18,6 +18,10 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      # Run pre-push hooks and stop push if they fail
+      - name: Pre-push hooks
+        run: sudo bash ./pushhooks.sh
+
       # Run Checkstyle checks
       - name: Run Checkstyle
         run: mvn checkstyle:check
