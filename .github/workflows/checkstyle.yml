@@ -22,7 +22,7 @@ jobs:
       - name: Pre-push hooks
         run: |
           chmod +x ./pushhooks.sh
-          sudo bash ./pushhooks.sh
+          ./pushhooks.sh
 
       # Run Checkstyle checks
       - name: Run Checkstyle

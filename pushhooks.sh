@@ -7,3 +7,4 @@ if [ $? -ne 0 ]; then
 fi
 echo "Checkstyle passed. Push allowed."
 exit 0
+
