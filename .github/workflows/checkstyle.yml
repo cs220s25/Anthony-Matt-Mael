@@ -1,7 +1,7 @@
 name: checkstyle
 on:
-  push: 
-    branches: 
+  push:
+    branches:
       - main
 jobs:
   checkstyle:
@@ -18,8 +18,14 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      # Run pre-push hooks and stop push if they fail
-      - name: Pre-push hooks
+      # Ensure custom style checks are used
+      - name: Ensure custom checkstyle.xml is used
         run: |
-          chmod +x .git/hooks/push-hooks
-          .git/hooks/push-hooks
+          if [ ! -f checkstyle.xml ]; then
+          echo "Error: checkstyle.xml not found in the repository root."
+          exit 1
+          fi
+
+      # Run Checkstyle
+      - name: Checkstyle Check
+        run: mvn checkstyle:check
