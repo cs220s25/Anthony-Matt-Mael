@@ -29,7 +29,6 @@ public class BotResponder {
                 return handleDeleteCommand(userId);
             } else if (message.equals("!myrole")) {
                 return handleMyRoleCommand(userId);
-
             }
 
             QuestionManager questionnaire = activeSessions.get(userId);
@@ -50,8 +49,6 @@ public class BotResponder {
             } else {
                 return BotResponses.invalidResponse();
             }
-
-
 
         } catch (SessionAlreadyInProgressException e) {
             System.err.println("SessionAlreadyInProgressException: " + e.getMessage());
