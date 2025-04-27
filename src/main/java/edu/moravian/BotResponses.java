@@ -12,18 +12,13 @@ public class BotResponses {
             """;
 }
 
-
-
     public static String noActiveQuestionnaire() {
         return "No active questionnaire. Type `!start` to begin.";
     }
 
-
-
     public static String displayRole(String roleSummary) {
         return "Your current role is: **" + roleSummary + "**";
     }
-
 
     public static String questionnaireDeleted() {
         return "Your questionnaire session has been deleted.";
@@ -41,7 +36,6 @@ public class BotResponses {
         return "**" + questionText + "**\n" + options;
     }
 
-
     public static String serverError() {
         return "Uh oh! Something went wrong on our end. Please try again later.";
     }
@@ -49,7 +43,4 @@ public class BotResponses {
     public static String sessionAlreadyInProgress() {
         return "You already have an active questionnaire session. Type `!delete` to delete it.";
     }
-
-
-
 }
