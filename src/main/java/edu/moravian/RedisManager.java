@@ -35,6 +35,8 @@ public class RedisManager extends MemoryStorage {
     }
 }
 
+
+
     public QuestionManager loadSession(String userId) {
     try {
         String currentIndexStr = jedis.get("session:" + userId + ":currentIndex");
