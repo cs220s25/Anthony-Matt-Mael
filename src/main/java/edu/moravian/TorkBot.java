@@ -20,6 +20,8 @@ public class TorkBot {
     public static void main(String[] args) {
         String discordToken;
         try {
+            System.out.println("Starting TorkBot...");
+                                System.out.println("Attempting to fetch Discord token from AWS Secrets Manager...");
             try {
                 String secretJson = AWSSecretsManagerUtil.getSecret("220_Discord_Token").trim();
 
