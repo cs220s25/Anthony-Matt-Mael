@@ -36,7 +36,7 @@ public class MultipleChoiceQuestion {
         if (index >= 0 && index < optionRoles.size()) {
             return optionRoles.get(index);
         }
-        throw new NumberOutofRange();
+            throw new NumberOutofRange();
     }
 
     /**
