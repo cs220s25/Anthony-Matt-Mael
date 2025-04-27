@@ -10,13 +10,10 @@ public class AWSSecretsManagerUtil {
         SecretsManagerClient client = SecretsManagerClient.builder()
                 .region(Region.US_EAST_1)
                 .build();
-
         GetSecretValueRequest getSecretValueRequest = GetSecretValueRequest.builder()
                 .secretId(secretName)
                 .build();
-
         GetSecretValueResponse getSecretValueResponse = client.getSecretValue(getSecretValueRequest);
-
         return getSecretValueResponse.secretString();
     }
 }
