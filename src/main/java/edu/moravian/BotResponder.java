@@ -19,6 +19,7 @@ public class BotResponder {
         this.redisManager = redisManager;
     }
 
+    // Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     public String respond(MessageReceivedEvent event, String userId, String message) {
         try {
             if (message.equals("!start")) {
