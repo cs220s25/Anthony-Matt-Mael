@@ -38,7 +38,6 @@ public class QuestionLoader {
                         "Leading the team in one direction", "Planning out the project"),
                 List.of(RoleEnum.Debugger, RoleEnum.Speaker, RoleEnum.Manager, RoleEnum.Strategist)
         ));
-
         return questions;
     }
 }

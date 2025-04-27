@@ -39,9 +39,6 @@ public class MultipleChoiceQuestion {
         throw new NumberOutofRange();
     }
 
-
-
-
     /**
      * Converts the question to a string representation.
      */
