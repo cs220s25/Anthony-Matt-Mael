@@ -69,6 +69,7 @@ public class BotResponder {
         }
     }
 
+
     private String handleMyRoleCommand(String userId) throws NoSessionDelete {
         QuestionManager questionnaire = activeSessions.get(userId);
         if (questionnaire == null) {
