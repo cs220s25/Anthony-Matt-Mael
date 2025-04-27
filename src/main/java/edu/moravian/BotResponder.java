@@ -16,12 +16,14 @@ public class BotResponder {
     private final RedisManager redisManager;
 
     public BotResponder(RedisManager redisManager) {
-        this.redisManager = redisManager;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                this.redisManager = redisManager;
     }
 
     public String respond(MessageReceivedEvent event, String userId, String message) {
         try {
-            if (message.equals("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n")) {
+            if (message.equals("!start")) {
                 return handleStartCommand(userId);
             } else if (message.equals("!help")) {
                 return BotResponses.helpMessage();
