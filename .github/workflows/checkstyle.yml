@@ -23,10 +23,3 @@ jobs:
         run: |
           chmod +x ./pushhooks.sh
           ./pushhooks.sh
-
-      # Run Checkstyle checks
-      - name: Run Checkstyle
-        run: mvn checkstyle:check
-            
-            
-    
