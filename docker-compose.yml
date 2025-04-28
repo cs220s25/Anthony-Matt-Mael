@@ -2,30 +2,26 @@ version: '3.8'
 
 services:
   bot:
-    build:
-      context: .
-      dockerfile: Docker/Dockerfile
-    ports:
-      - "8000:8000"
+    build: .
     depends_on:
       - redis
     environment:
       - REDIS_HOST=redis
     restart: always
-
+    volumes:
+      - ~/.aws:/root/.aws:ro
+    networks:
+      - redis_network
+        
   redis:
-    image: redis:latest
+    image: redis
+    container_name: redis
     ports:
       - "6379:6379"
     restart: always
     networks:
       - redis_network
-    volumes:
-      - redis_data:/data
 
 networks:
   redis_network:
     driver: bridge
-
-volumes:
-  redis_data:
