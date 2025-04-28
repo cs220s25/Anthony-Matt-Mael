@@ -17,7 +17,7 @@ services:
     image: redis
     container_name: redis
     ports:
-      - "6379:6379"
+      - "6370:6379"
     restart: always
     networks:
       - redis_network

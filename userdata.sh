@@ -1,8 +1,6 @@
 #!/bin/bash
 yum install git -y
 yum install redis6 -y
-systemctl enable redis6
-systemctl start redis6
 yum install docker -y
 systemctl enable docker
 systemctl start docker
