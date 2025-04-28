@@ -8,7 +8,7 @@ public class BotResponses {
             - `!start`: Start your questionnaire.
             - `!delete`: Delete your current questionnaire session.
             - `!myrole`: Display your current role.
-            - `!help`: Show this help message (test).
+            - `!help`: Show this help message.
             """;
 }
 
