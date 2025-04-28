@@ -4,7 +4,7 @@ services:
   bot:
     build:
       context: .
-      dockerfile: Docker/Dockerfile  # <--- since your Dockerfile is inside /Docker
+      dockerfile: Docker/Dockerfile
     ports:
       - "8000:8000"
     depends_on:
@@ -18,3 +18,14 @@ services:
     ports:
       - "6379:6379"
     restart: always
+    networks:
+      - redis_network
+    volumes:
+      - redis_data:/data
+
+networks:
+  redis_network:
+    driver: bridge
+
+volumes:
+  redis_data:

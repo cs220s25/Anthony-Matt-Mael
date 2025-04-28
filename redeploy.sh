@@ -1,3 +1,4 @@
-sudo git pull origin main
-sudo mvn clean package
-java -jar target/dbot-1.0-SNAPSHOT.jar
+#!/bin/bash
+sudo docker compose down
+git pull origin main
+sudo docker compose up --build -d
