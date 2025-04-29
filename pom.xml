@@ -152,6 +152,7 @@
              <repository>
                  <id>github</id>
                  <name>GitHub Packages</name>
+                 <!--suppress UnresolvedMavenProperty -->
                  <url>https://maven.pkg.github.com/${GITHUB_REPOSITORY}</url>
              </repository>
          </distributionManagement>
