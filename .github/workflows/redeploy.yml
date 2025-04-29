@@ -1,9 +1,12 @@
 name: Redeploy Discord Bot
 
 on: 
-  push:
-    branches:
-      - main # Triggers the workflow automatically when pushes are made to the main branch
+  workflow_dispatch:
+    inputs:
+      redeploy:
+        description: 'Redeploy the Discord bot'
+        required: true
+        default: 'yes'
       
 jobs:
   deploy:
