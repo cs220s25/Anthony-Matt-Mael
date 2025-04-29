@@ -9,6 +9,7 @@ public class BotResponses {
             - `!delete`: Delete your current questionnaire session.
             - `!myrole`: Display your current role.
             - `!help`: Show this help message
+            -  This is a demo message.
             """;
 }
 
